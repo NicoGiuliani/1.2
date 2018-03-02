@@ -7,6 +7,9 @@ const clock = document.getElementById("clock");
 window.onkeydown = function(e) {
 	if (e.keyCode != 18 && e.keyCode != 17) {
 		inputBar.focus();
+	} 
+	if (event.keyCode == 13) {
+		myButton.click();
 	};
 }
 
@@ -28,19 +31,36 @@ inputBar.onblur = function() {
 	button.style.opacity = "0.3";
 }
 
-inputBar.onkeydown = function() {
-	if (event.keyCode == 13) {
-		myButton.click();
-	}
-}
-
 myButton.onclick = function() {
 	var searchText = inputBar.value.trim();
-	// alert("At this point, a Google search for " + searchText + " should pop open.");
+	inputBar.value = "";
 	if (searchText != "") {
-		var searchString = "https://www.google.com/search?q=" + searchText;
-		// alert("Its url should read " + searchString + ".");
-		window.open(searchString, "_self");
+		switch (searchText.toLowerCase()) {
+			case "facebook":
+			case "f":
+				window.location.href = "https://www.facebook.com";
+				break;
+			case "youtube":
+			case "y":
+				window.location.href = "https://www.youtube.com";
+				break;
+			case "tumblr":
+			case "t":
+				window.location.href = "https://www.tumblr.com";
+				break;
+			case "wikipedia":
+			case "w":
+				window.location.href = "https://www.wikipedia.com";
+				break;
+			case "forvo":
+			case "f":
+				window.location.href = "https://www.forvo.com";
+				break;
+			default:
+				var searchString = "https://www.google.com/search?q=" + searchText;
+				window.open(searchString, "_self");	
+		}
+
 	}
 }
 
