@@ -1,0 +1,115 @@
+
+
+/********* Element Selectors *********/
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: url(../img/v1.jpg);
+	background-size: 100%;
+	padding: 0;
+}
+
+p, body {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+
+/* These hide the small arrow on the select box */
+select {
+     /*for Firefox*/
+     -moz-appearance: none;
+     /*for Chrome*/
+     -webkit-appearance:none;
+}
+
+/*for IE10*/
+select::-ms-expand {
+    display: none;
+}
+
+
+/********* ID Selectors *********/
+
+#container {
+	float: right;
+	text-align: center;
+	width: 50%;
+}
+
+#drop_menu {
+	background-color: #7dffb4;
+	border: 2px outset #ff93ea;
+	border-radius: 15px;
+	font-size: 1.5em;
+	letter-spacing: 5px;
+	margin-top: 3%;
+	opacity: 0.7;
+	padding: 10px;
+}
+
+#drop_menu option {
+	font-size: 1.5em;
+}
+
+#searchBar {
+	border-radius: 5px;
+	color: #22ffa7;
+	font-size: 1.25em; /* 20px / 16px */
+	margin: 10px 0 15px 0;
+	opacity: 0.3;
+	text-align: inherit;
+}
+
+#button {
+	background-color: #7dffb4;
+	border: 3px outset #ff93ea;
+	border-radius: 5px;
+	font-size: 1em;
+	letter-spacing: 5px;
+	opacity: 0.3;
+	padding: 2px 22px;
+}
+
+#date_time {
+	margin-top: 1.5em;
+}
+
+#clock {
+	color: #ffbfd9;
+	/* Megrim, Orbitron, Libre Barcode 39 Extended Text */
+	font-family: "Orbitron", "Helvetica", sans-serif;
+	font-size: 3.75em; /* 60px / 16px */
+	opacity: 0.75;
+	text-shadow: 1px 1px #fff;
+}
+
+#date {
+	color: #fff;
+	font-family: "Orbitron", "Helvetica", sans-serif;
+	font-size: 3.125em; /* 50px / 16px */
+ 	opacity: 0.7;
+}
+
+
+/********* Media Queries *********/
+
+@media (max-width: 680px) {
+	#container {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+@media (max-aspect-ratio: 1170/655) {
+	body {
+		background-size: cover;
+	}
+}
