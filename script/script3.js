@@ -19,6 +19,8 @@ var khanacademy = ["khanacademy", "k", "https://www.khanacademy.org"];
 var shortcuts = [facebook, youtube, tumblr, wikipedia, forvo, mml, 
 				 canvas, duolingo, treehouse, khanacademy];
 
+window.focus();
+
 window.onkeydown = function(e) {
 	if (e.keyCode != 17 && e.keyCode != 18) { inputBar.focus(); } 
 	if (event.keyCode == 13) { myButton.click(); }
