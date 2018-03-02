@@ -4,24 +4,26 @@ const searchSection = document.getElementById("search_section");
 const dropMenu = document.getElementById("drop_menu");
 const clock = document.getElementById("clock");
 
+// site name, shortcut key, link //
+var facebook = ["facebook", "f", "https://www.facebook.com"];
+var youtube = ["youtube", "y", "https://www.youtube.com"];
+var tumblr = ["tumblr", "t", "https://www.tumblr.com"];
+var wikipedia = ["wikipedia", "w", "https://www.wikipedia.org"];
+var forvo = ["forvo", "fo", "https://www.forvo.com"];
+var mml = ["mml", "m", "https://www.pearsonmylabandmastering.com/northamerica/mymathlab/"];
+var canvas = ["canvas", "c", "https://ccs.instructure.com/login/ldap"];
+var duolingo = ["duolingo", "d", "https://www.duolingo.com"];
+var treehouse = ["treehouse", "tr", "https://teamtreehouse.com/home"];
+var khanacademy = ["khanacademy", "k", "https://www.khanacademy.org"];
+
+var shortcuts = [facebook, youtube, tumblr, wikipedia, forvo, mml, 
+				 canvas, duolingo, treehouse, khanacademy];
+
 window.onkeydown = function(e) {
-	if (e.keyCode != 18 && e.keyCode != 17) {
-		inputBar.focus();
-	} 
-	if (event.keyCode == 13) {
-		myButton.click();
-	};
+	if (e.keyCode != 17 && e.keyCode != 18) { inputBar.focus(); } 
+	if (event.keyCode == 13) { myButton.click(); }
 }
 
-dropMenu.onfocus = function() {
-	document.getElementById("top_item").style.display = "none";
-}
-
-dropMenu.onchange = function() {
-	window.location.href = this.value;	
-}
-
-// These handle the opacity of the search section
 inputBar.onfocus = function() {
 	inputBar.style.opacity = "1";
 	button.style.opacity = "1";
@@ -31,36 +33,26 @@ inputBar.onblur = function() {
 	button.style.opacity = "0.3";
 }
 
+
+
+
 myButton.onclick = function() {
 	var searchText = inputBar.value.trim();
+	var continueSearch = true;
 	inputBar.value = "";
 	if (searchText != "") {
-		switch (searchText.toLowerCase()) {
-			case "facebook":
-			case "f":
-				window.location.href = "https://www.facebook.com";
-				break;
-			case "youtube":
-			case "y":
-				window.location.href = "https://www.youtube.com";
-				break;
-			case "tumblr":
-			case "t":
-				window.location.href = "https://www.tumblr.com";
-				break;
-			case "wikipedia":
-			case "w":
-				window.location.href = "https://www.wikipedia.com";
-				break;
-			case "forvo":
-			case "f":
-				window.location.href = "https://www.forvo.com";
-				break;
-			default:
-				var searchString = "https://www.google.com/search?q=" + searchText;
-				window.open(searchString, "_self");	
+		for (var site in shortcuts) {
+			if (searchText.toLowerCase() == shortcuts[site][0] || 
+				searchText.toLowerCase() == shortcuts[site][1]) {
+				window.location.href = shortcuts[site][2];
+				continueSearch = false;
+			}
 		}
 
+		if (continueSearch) {
+			var url = "https://www.google.com/search?q=" + searchText;
+			window.open(url, "_self");
+		}
 	}
 }
 
