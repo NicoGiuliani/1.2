@@ -19,11 +19,19 @@ var khanacademy = ["khanacademy", "k", "https://www.khanacademy.org"];
 var shortcuts = [facebook, youtube, tumblr, wikipedia, forvo, mml, 
 				 canvas, duolingo, treehouse, khanacademy];
 
-window.focus();
-
 window.onkeydown = function(e) {
-	if (e.keyCode != 17 && e.keyCode != 18) { inputBar.focus(); } 
-	if (event.keyCode == 13) { myButton.click(); }
+	if (e.keyCode == 192) { 
+		inputBar.blur();
+		inputBar.value = "";
+		var menu = document.getElementById("menu");
+		menu.style.display == "" ? menu.style.display = "block" : menu.style.display = "";
+	}
+	else {
+		if (e.keyCode == 13) { myButton.click(); }
+		inputBar.focus();
+	}
+
+
 }
 
 inputBar.onfocus = function() {
@@ -34,9 +42,6 @@ inputBar.onblur = function() {
 	inputBar.style.opacity = "0.3";
 	button.style.opacity = "0.3";
 }
-
-
-
 
 myButton.onclick = function() {
 	var searchText = inputBar.value.trim();
@@ -50,7 +55,6 @@ myButton.onclick = function() {
 				continueSearch = false;
 			}
 		}
-
 		if (continueSearch) {
 			var url = "https://www.google.com/search?q=" + searchText;
 			window.open(url, "_self");
