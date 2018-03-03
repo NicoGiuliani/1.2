@@ -19,7 +19,6 @@ var khanacademy = ["khanacademy", "k", "https://www.khanacademy.org"];
 var shortcuts = [facebook, youtube, tumblr, wikipedia, forvo, mml, 
 				 canvas, duolingo, treehouse, khanacademy];
 
-<<<<<<< HEAD
 window.onkeydown = function(e) {
 	if (e.keyCode == 192) { 
 		inputBar.blur();
@@ -33,13 +32,6 @@ window.onkeydown = function(e) {
 	}
 
 
-=======
-window.focus();
-
-window.onkeypress = function(e) {
-	if (e.keyCode != 17 && e.keyCode != 18) { inputBar.focus(); } 
-	if (event.keyCode == 13) { myButton.click(); }
->>>>>>> origin/master
 }
 
 inputBar.onfocus = function() {
