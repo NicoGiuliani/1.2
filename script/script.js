@@ -6,17 +6,9 @@ const clock = document.getElementById("clock");
 
 // site name, shortcut key, link //
 var facebook = ["facebook", "f", "https://www.facebook.com"];
-var youtube = ["youtube", "y", "https://www.youtube.com"];
-var tumblr = ["tumblr", "t", "https://www.tumblr.com"];
 var wikipedia = ["wikipedia", "w", "https://www.wikipedia.org"];
-var forvo = ["forvo", "fo", "https://www.forvo.com"];
-var mml = ["mml", "m", "https://www.pearsonmylabandmastering.com/northamerica/mymathlab/"];
-var canvas = ["canvas", "c", "https://ccs.instructure.com/login/ldap"];
-var duolingo = ["duolingo", "d", "https://www.duolingo.com"];
-var treehouse = ["treehouse", "tr", "https://teamtreehouse.com/home"];
-var khanacademy = ["khanacademy", "k", "https://www.khanacademy.org"];
-var shortcuts = [facebook, youtube, tumblr, wikipedia, forvo, mml, 
-				 canvas, duolingo, treehouse, khanacademy];
+var youtube = ["youtube", "y", "https://www.youtube.com"];
+var shortcuts = [facebook, youtube, wikipedia];
 
 window.onkeydown = function(e) {
 	if (e.keyCode == 192) { 
